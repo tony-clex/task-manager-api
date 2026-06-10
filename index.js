@@ -13,22 +13,18 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// Middlewares
 app.use(express.json());
 app.use(cookieParser());
 app.use(logger);
 app.use(limiter); // Apply rate limiting globally
 
-// Routes
 app.use('/api/users', userRoutes);
 app.use('/api/tasks', taskRoutes);
 
 app.get('/', (req, res) => res.send('API is running'));
 
-// Error handling
 app.use(errorHandler);
 
-// Start server
 const startServer = async () => {
   try {
     await connectToDb();

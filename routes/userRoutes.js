@@ -5,11 +5,9 @@ import { protect } from '../middleware/middleware.js';
 
 const router = express.Router();
 
-// Public routes
 router.post('/register', registerUser);
 router.post('/login', loginUser);
 
-// Protected routes (example)
 router.use(protect);
 
 export { router as userRoutes };
