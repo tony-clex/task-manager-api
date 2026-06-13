@@ -1,3 +1,6 @@
 node_modules
 .env
-api.logapi.log
+.env.local
+api.log
+logs
+*.log
